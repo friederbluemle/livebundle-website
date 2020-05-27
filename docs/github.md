@@ -75,8 +75,7 @@ Keep the the private key file handy. We will need it in our next step.
 
 ### Launching LiveBundle infrastructure locally
 
-- Clone the following repository on your machine 
-https://github.com/belemaire/livebundle-docker
+- Clone the [LiveBundle Docker Starter repository](https://github.com/electrode-io/livebundle-docker-starter)
 - Open the `config/github.yaml` file and uncomment the whole `github` configuration section
 - Replace every value in the `github` configuration with the values from the GitHub application you just created in previous step. All the configuration values can be found on top of your application settings page. The `privateKey` can be copy/pasted from the private key file you previously downloaded.
 
