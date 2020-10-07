@@ -10,7 +10,7 @@ module.exports = {
     navbar: {
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
