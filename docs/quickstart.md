@@ -4,84 +4,76 @@ title: Quick Start
 sidebar_label: Quick Start
 ---
 
-### Prerequisites
+### Disclaimer
 
-On top of a properly setup [React Native](https://reactnative.dev/) development environment, the following tools will have to be installed
+LiveBundle requires some kind of remote storage to store the bundles, and serve them from your mobile application.
+It currently ships with [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/) support, via the s[livebundle-storage-azure](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-azure) provider plugin.
 
-- [Docker](https://www.docker.com) 
-- [Yarn](https://yarnpkg.com/)
+LiveBundle core team is not planning to implement other storage providers plugins, but will welcome external contributions of such new plugins.
 
-### Getting the sample application
+This means that if you do not have an Azure account, you will need to create one to use LiveBundle out of the box.
+On the other hand, if you already have a cloud storage account through a different provider, you can either create an Azure account just for LiveBundle *(probably overkill)*, or contribute a new storage provider plugin.
 
-To get you started quickly, we've created a [sample application](https://github.com/electrode-io/livebundle-sample) that we will use throughout this guide.  
-Go ahead and clone this repository on your machine.
+### Adding LiveBundle dependencies
 
-Then just run
+LiveBundle is composed of two top level packages, [`livebundle`](https://github.com/electrode-io/livebundle) *(the command line CLI)*, and [`react-native-livebundle`](https://github.com/electrode-io/react-native-livebunde) *(the native module)*.
+
+You should add both to your React Native application project.
+
+Using `yarn`
 
 ```bash
-yarn install
+yarn add livebundle react-native-livebundle
 ```
 
-Finally let's make sure that you are able to build and launch the application
+Using `npm`
 
-```
-npx react-native run-android --no-packager
-```
-
-The application should launch and ask for permission to use the Camera *(for scanning QR Codes)*, just tap `Allow`.
-
-### Starting a LiveBundle Store server
-
-Run the following command to start a LiveBundle store server in a Docker container on your machine
-
-```
-docker run -it --rm -p 3000:3000 belemaire/livebundle-store
+```bash
+npm instal livebundle react-native-livebundle --save
 ```
 
-The server will listen on `localhost:3000`  
-To ensure that it is properly running, just open `http://localhost:3000/status` in your browser, you should see `packager-status:running`
+LiveBundle also have a peer dependency on [`react-native-camera`](https://github.com/react-native-community/react-native-camera).
+It relies on this native module for its QR Code scanning functionality. If your React Native application is already using this native module, then you don't have anything to do. Otherwise, please make sure to add it to your application and configure the necessary permissions on Android and iOS *(LiveBundle only need permission to access the camera)*.
 
-### Pushing your first bundle
+If you are using `npm` as your package manager, you will also need to add the following in the `scripts` section of your application `package.json` :
 
-We will now make some changes to the application, and push our first LiveBundle !
-
-- Open `App.js` and update the `Change Me` text with whatever you'd like. 
-- Run `yarn livebundle upload`
-
-LiveBundle will then create all the different bundle variants to include in the LiveBundle package.  
-The configuration included with the sample application will instruct LiveBundle to generate four different bundles (Android dev/prod and iOS dev/prod).
-
-Once bundles generation is complete, the resulting LiveBundle package will be uploaded to the store, and a QR Code will be displayed in the terminal as well as an image.  
-Keep the QR Code handy, we will need it for the next step.
-
-### Installing the bundle   
-
-Let's now launch the application and install the bundle we just pushed.
-
-:::tip
-If you are running the application on a device and would like to connect on wifi, you can update the `LiveBundleStoreUrl` string in `android/app/src/main/res/values/strings.xml`.  
-Just replace `localhost` with your computer IP address
-:::
-
-:::tip
- If you are running the application on an emulator, you should set it up so that the camera uses your webcam (external) in order to scan the QR Code. Refer to [this StackOverflow answer](https://stackoverflow.com/a/30792615/13243718) for instructions
-:::
-
-- If the application is not already running, just launch it by running `npx react-native run-android --no-packager`
-- If you haved launched the application on a connected device, or an emulator, make sure to run  
 ```
-adb reverse tcp:3000 tcp:3000
+"livebundle": "livebundle"
 ```
-- Bring up the React Native developer menu and tap on `LiveBundle - Scan`
-- Scan the QR Code
 
-LiveBundle will retrieve the bundle associated to this QR Code, matching the current platform and environment *(dev or prod)*, and will immediately install it.  
-You should now see your updated text.
+### Creating a LiveBundle configuration file
 
-To uninstall the bundle and go back to the initial state of the application, just tap `LiveBundle - Reset` from React Native developer menu.
+To create an initial LiveBundle configuration file for your application, just run the `init` command from your application project directory
 
-:::note
-In addition to the QR Code, a deep link url is always generated. You can install a LiveBundle either by scanning its QR Code or opening its deep link.
-:::
+Using `yarn`
 
-That's it, you've just seen how easy it is to push and install bundles with LiveBundle !
+```bash
+yarn livebundle init
+```
+
+Using `npm`
+
+```bash
+npm run livebundle init
+```
+
+The `init` command will generate a new `livebundle.yml` configuration file in your React Native application directory.
+This configuration file will work out of the box, but is configured to use the [livebundle-storage-fs](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs) storage plugin to store the bundles. This means that the bundles will be stored local to the machine that is running the `livebundle upload` command. This is great for testing LiveBundle upload, but is very limited as it will not work to download bundles from the phone.
+
+### Trying out the `upload` command
+
+Given that the default configuration file is using the [livebundle-storage-fs](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs) storage provider to store the bundles to a local temporary directory, it is possible to try out the `livebundle upload` command out of the box before having an Azure Blob Storage available.
+
+To try out LiveBundle upload, just run the following command:
+
+```bash
+yarn livebundle upload
+```
+
+Using `npm`
+
+```bash
+npm run livebundle upload
+```
+
+The default configuration file is setup to generate a single bundle *(android / dev)* and upload it to the storage *(local temporrary directory)* along with generating a QR Code and a Deep Link.
