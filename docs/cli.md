@@ -49,7 +49,7 @@ npm run livebundle init
 The `init` command will generate a new `livebundle.yml` configuration file in your React Native application directory.
 This configuration file will work out of the box, but is configured to use the [livebundle-storage-fs](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs) storage plugin to store the bundles. This means that the bundles will be stored local to the machine that is running the `livebundle upload` command. This is great for testing LiveBundle upload, but is very limited as it will not work to download bundles from the phone.
 
-### Trying out the `upload` command
+### Trying it
 
 Because the default configuration file is set to use the [livebundle-storage-fs](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs) storage provider to store the bundles in a local temporary directory, it is possible to try out the `livebundle upload` command out of the box before having an Azure Blob Storage available.
 
@@ -65,5 +65,4 @@ Using `npm`
 npm run livebundle upload
 ```
 
-The default configuration file is setup to generate a single bundle *(android / dev)* and upload it to the storage *(local temporrary directory)* along with generating a QR Code and a Deep Link.
-
+The default configuration file will inform LiveBundle to generate a single bundle *(android / dev)* and upload it to ephemeral storage *(local temporrary directory)* along with generating a QR Code and a Deep Link.

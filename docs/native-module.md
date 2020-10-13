@@ -4,9 +4,9 @@ title: Native Module Setup
 sidebar_label: Native Module Setup
 ---
 
-## Installation
+## Installing LiveBundle native module
 
-To add a dependency on `react-native-livebundle` your can run the following command from your application directory:
+Add a dependency on `react-native-livebundle`
 
 Using `yarn`
 
@@ -25,7 +25,7 @@ LiveBundle also have a peer dependency on [react-native-camera](https://github.c
 It relies on this native module for its QR Code scanning functionality. If your React Native application is already using this native module, then you don't have anything to do. Otherwise, please make sure to add it to your application and configure the necessary permissions on Android and iOS *(LiveBundle only need permission to access the camera)*.
 :::
 
-## Initialization
+## Initializing LiveBundle
 
 LiveBundle native module should be initialized from both the native side, and the JS side.
 
@@ -47,9 +47,11 @@ LiveBundleModule.initialize(
       "https://[AZURE-ACCOUNT].blob.core.windows.net/[AZURE_CONTAINER]/");
 ```
 
-Your should replace `[AZURE-ACCOUNT]` and `[AZURE_CONTAINER]` with values specific to your Azure account.
+Your should replace `[AZURE-ACCOUNT]` and `[AZURE_CONTAINER]` with values specific to your Azure account. If you don't have an Azure account yet available, just use a fake url. LiveBundle will not make any requests to the storage unless you are scanning a QR Code or navigating a Deep Link. At least this way you'll be able to validate that you can launch LiveBundle from your application.
 
+:::info
 The `initialize` method also accepts a third optional parameter, being an Azure SAS token to use to download the bundles *(In case your Azure Blob Storage container do not allow public blob reads, you can use such a token for blob reads)*
+:::
 
 :::note
 This initialization setup assumes an "out of the box" React Native application structure. If your application is for some reason diverging from this default structure *(for example if your application intialization code is not located in MainApplication.java)* you should invoke `initialize` where you see fit.
@@ -65,3 +67,16 @@ livebundle.initialize()
 ```
 
 This call should be made as soon as possible, preferably in the application entry file *(typically `index.js`)*
+
+## Trying it
+
+To try out LiveBundle in your React Native application, just launch your application and bring up the React Native developer menu. If LiveBundle was succesfully installed and initialized, you should see a new `LiveBundle` menu item at the bottom of the React Native developer menu.
+
+Tapping `LiveBundle` should bring up the LiveBundle menu on screen with its `Scan` button.
+
+You can also try to launch LiveBundle menu by navigating a Deep Link, which can be of use in case your application build does not give access to the React Native developer menu.
+
+`livebundle://menu`
+
+TODO : `adb` command, and mention Slack
+
