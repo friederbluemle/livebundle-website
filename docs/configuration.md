@@ -4,6 +4,8 @@ title: Configuration
 sidebar_label: Configuration
 ---
 
+The [default configuration file](link_to_repo_default_config_file) generated with `livebundle init` command, comes with a set of predefined plugins shipped with LiveBundle, along with their default configuration *(even though not explicitely needed)*.
+
 ## File Location
 
 LiveBundle will search for a file named `livebundle.yml` (or `livebundle.yaml`) in:
@@ -12,11 +14,11 @@ LiveBundle will search for a file named `livebundle.yml` (or `livebundle.yaml`) 
 - `/etc/livebundle/`
 - `$HOME/`
 
-You can override this with the `--config` command line option which takes a path to a LiveBundle configuration file.
+You can instead choose to load a specific config file using the `--config` command line option.
 
 ## File Structure
 
-A LiveBundle configuration file is a [`yaml`](https://yaml.org/) file, containing four main sections:
+A LiveBundle configuration file is a [`yaml`](https://yaml.org/) file, composed of four main sections:
 
 ```yaml
 # Bundler plugin declaration & configuration
@@ -52,7 +54,9 @@ generators:
   qrcode:
 ```
 
-Some plugins, like the `qrcode` one, are configurable, so it is also possible to set some configuration properties:
+## Configuration properties
+
+Some plugins, like the `qrcode` one, are configurable, so it is also possible to set some configuration properties values:
 
 ```yaml
 generators:
@@ -66,4 +70,21 @@ Any configuration property value, not explicitely set, will be set to the defaul
 Under the hood, LiveBundle, when encounteering this generator configuration, will dynamically load the `livebundle-generator-qrcode` package and initialize it with the supplied configuration *(partial or complete)*.
 
 If you want to learn more about LiveBunddle plugins and implement a new one, you can check our [Plugins documentation](path_to_plugins_section).
+
+### Properties as environment variables
+
+Some plugins offer to set some of their configuration properties as environment variables rather than setting them directly in the yaml configuration file.
+
+This can be helpful for example for property values that should not be clearly exposed in the configuration, or should be dynamic.
+
+These environment variables are using the following naming convention
+
+`LB-[PLUGIN_TYPE]-[PLUGIN_NAME]-[PROPERTY_NAME]`
+
+For example, the [azure storage plugin](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-azure) allow to set the `sasToken` configuration property through `LB_STORAGE_AZURE_SASTOKEN` environement variable.
+
+:::warning
+A configuration property value can either be set directly in the yaml configuration file, or through an environment variable, but not both.
+If that's the case, LiveBundle will fail and report the ambiguity.
+
 

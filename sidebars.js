@@ -1,6 +1,12 @@
 module.exports = {
   someSidebar: {
-    'Getting Started': ['quickstart', 'configuration', 'plugins'],
-    Features: ['mdx'],
+    "Getting Started": [
+      "disclaimer",
+      "cli",
+      "native-module",
+      "configuration",
+      "plugins",
+      "plugin-authoring",
+    ],
   },
 };
