@@ -1,7 +1,7 @@
 ---
 id: native-module
-title: Native Module Setup
-sidebar_label: Native Module Setup
+title: Native Module setup
+sidebar_label: Native Module setup
 ---
 
 ## Installing LiveBundle native module
@@ -36,43 +36,42 @@ To initialize LiveBundle on Android, you should update the `MainApplication.java
 First, add the following import statement
 
 ```java
-import io.livebundle.LiveBundleModule;
+import io.livebundle.LiveBundle;
 ```
 
-Then, in the `onCreate` method, you should make a call to the `initialize` method of `LiveBundleModule` as follow
+Then, in the `onCreate` method, you should make a call to the `initialize` method of `LiveBundle` as follow
 
 ```java
-LiveBundleModule.initialize(
-      getReactNativeHost(),
-      "https://[AZURE-ACCOUNT].blob.core.windows.net/[AZURE_CONTAINER]/");
+LiveBundle.initialize(
+  getReactNativeHost(),
+  "https://[AZURE_ACCOUNT].blob.core.windows.net/[AZURE_CONTAINER]/");
 ```
 
-Your should replace `[AZURE-ACCOUNT]` and `[AZURE_CONTAINER]` with values specific to your Azure account. If you don't have an Azure account yet available, just use a fake url. LiveBundle will not make any requests to the storage unless you are scanning a QR Code or navigating a Deep Link. At least this way you'll be able to validate that you can launch LiveBundle from your application.
+Your should replace `[AZURE_ACCOUNT]` and `[AZURE_CONTAINER]` with values specific to your Azure account. If you don't have an Azure account yet available, you can use a fake url. LiveBundle will only make request to the URL when scanning a QR Code or navigating a Deep Link. This way you'll still be able to validate that you can launch LiveBundle from your application.
 
 :::info
-The `initialize` method also accepts a third optional parameter, being an Azure SAS token to use to download the bundles *(In case your Azure Blob Storage container do not allow public blob reads, you can use such a token for blob reads)*
+The `initialize` method also accepts a third optional parameter, respectively an Azure SAS token to use to download the bundles *(In case your Azure Blob Storage container does not allow public blob reads, you can use such a token for blob reads)*
 :::
 
 :::note
-This initialization setup assumes an "out of the box" React Native application structure. If your application is for some reason diverging from this default structure *(for example if your application intialization code is not located in MainApplication.java)* you should invoke `initialize` where you see fit.
+This initialization setup assumes an "out of the box" React Native application structure. If your application is more complex and diverges from this default structure *(for example if your application intialization code is not located in MainApplication.java)* you should invoke `initialize` where you see fit *(Ideally just after initializing React Native)*
 :::
 
 ### JavaScript
 
-On the JavaScript side, you should import LiveBundle native module and simply make a call to initialize as follow.
+On the JavaScript side, you should import LiveBundle native module and simply make a call to the `initialize` method as follow.
 
 ```javascript
 import livebundle from 'react-native-livebundle'
 livebundle.initialize()
 ```
 
-This call should be made as soon as possible, preferably in the application entry file *(typically `index.js`)*
+This call should be made as early as possible, preferably in the application entry point *(typically `index.js`)*
 
-## Trying it
+## Trying the Native Module
 
 To try out LiveBundle in your React Native application, just launch your application and bring up the React Native developer menu. If LiveBundle was succesfully installed and initialized, you should see a new `LiveBundle` menu item at the bottom of the React Native developer menu.
-
-Tapping `LiveBundle` should bring up the LiveBundle menu on screen with its `Scan` button.
+Tapping on it should bring the LiveBundle menu on screen with its `Scan` button.
 
 You can also try to launch LiveBundle menu by navigating a Deep Link, which can be of use in case your application build does not give access to the React Native developer menu.
 

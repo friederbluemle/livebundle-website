@@ -1,12 +1,10 @@
 ---
 id: cli
-title: CLI Setup
-sidebar_label: CLI Setup
+title: CLI setup
+sidebar_label: CLI setup
 ---
 
 ### Installing LiveBundle CLI
-
-LiveBundle is composed of two top level packages, [`livebundle`](https://github.com/electrode-io/livebundle) *(the command line CLI)*, and [`react-native-livebundle`](https://github.com/electrode-io/react-native-livebunde) *(the native module)*.
 
 We recommend keeping the CLI local to your React Native application project, and not installing it globally.
 
@@ -49,7 +47,7 @@ npm run livebundle init
 The `init` command will generate a new `livebundle.yml` configuration file in your React Native application directory.
 This configuration file will work out of the box, but is configured to use the [livebundle-storage-fs](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs) storage plugin to store the bundles. This means that the bundles will be stored local to the machine that is running the `livebundle upload` command. This is great for testing LiveBundle upload, but is very limited as it will not work to download bundles from the phone.
 
-### Trying it
+### Trying the CLI
 
 Because the default configuration file is set to use the [livebundle-storage-fs](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs) storage provider to store the bundles in a local temporary directory, it is possible to try out the `livebundle upload` command out of the box before having an Azure Blob Storage available.
 

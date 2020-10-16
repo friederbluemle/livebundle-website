@@ -14,7 +14,8 @@ LiveBundle will search for a file named `livebundle.yml` (or `livebundle.yaml`) 
 - `/etc/livebundle/`
 - `$HOME/`
 
-You can instead choose to load a specific config file using the `--config` command line option.
+You can instead choose to load a specific config file using the `--config` command line option.<br />
+This option can be of help in case you have different LiveBundle configuration files, for different environments. For example, you could have one default configuration file `livebundle.yml` used to perform uploads from any developer workstation, and a different configuration file `livebundle.ci.yml` for example, to be used when running LiveBundle uploads from a CI environment *(when running LiveBundle for every opened PR)*.
 
 ## File Structure
 
@@ -34,7 +35,7 @@ storage:
 notifiers:
 ```
 
-Each of these sections represent a specific LiveBundle plugin type and will in turn contain the following:
+Each of these sections represent a specific LiveBundle plugin type *(refer to the [plugins](./plugins.md) documentation for more information about plugins)* and will also in turn contain the following:
 
 - One or more plugin name(s) matching the plugin type
 - The configuration *(if any)* of each of these plugins
@@ -67,9 +68,7 @@ generators:
 
 Any configuration property value, not explicitely set, will be set to the default value coming with the plugin, unless no such default value exist for the property, in which case its value should be explicitely set in the configuration.
 
-Under the hood, LiveBundle, when encounteering this generator configuration, will dynamically load the `livebundle-generator-qrcode` package and initialize it with the supplied configuration *(partial or complete)*.
-
-If you want to learn more about LiveBunddle plugins and implement a new one, you can check our [Plugins documentation](path_to_plugins_section).
+Under the hood, LiveBundle, when handling this generator configuration, will dynamically load the `livebundle-generator-qrcode` package and initialize it with the supplied configuration *(partial or complete)*.
 
 ### Properties as environment variables
 
@@ -86,5 +85,4 @@ For example, the [azure storage plugin](https://github.com/electrode-io/livebund
 :::warning
 A configuration property value can either be set directly in the yaml configuration file, or through an environment variable, but not both.
 If that's the case, LiveBundle will fail and report the ambiguity.
-
 

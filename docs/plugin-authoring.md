@@ -33,7 +33,7 @@ The convention used by LiveBundle for naming such environment variables is the f
 
 ### Configuration processing and validation
 
-Internally, LiveBundle will process and validate a plugin configuration as follow
+Internally, LiveBundle will preprocess and validate each plugin configuration as follow:
 
 1. Parse the plugin configuration as declared in the YAML configuration file
 2. "Reconcilate" the configuration with environment variables. For any configuration properties that can be set as environment variables, LiveBundle will look if any of these environment variables are set and will apply the following reconciliation logic :

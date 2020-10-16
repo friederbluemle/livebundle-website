@@ -1,12 +1,20 @@
 module.exports = {
   someSidebar: {
     "Getting Started": [
-      "disclaimer",
+      "introduction",
       "cli",
       "native-module",
+      "azure-storage",
+      "github"
+    ],
+    "Reference": [
       "configuration",
       "plugins",
-      "plugin-authoring",
+      "troubleshooting",
+      "faq"
     ],
+    "Advanced": [
+      "plugin-authoring",
+    ]
   },
 };
