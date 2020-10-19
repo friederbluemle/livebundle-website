@@ -1,7 +1,9 @@
 module.exports = {
   someSidebar: {
+    "LiveBundle": [
+      "welcome",
+    ],
     "Getting Started": [
-      "introduction",
       "cli",
       "native-module",
       "azure-storage",

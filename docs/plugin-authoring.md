@@ -4,6 +4,99 @@ title: Plugin Authoring
 sidebar_label: Plugin Authoring
 ---
 
+## Where to host plugin implementation
+
+While LiveBundle plugins are independent node packages, loaded dynamically, thus do not strictly have to be present within LiveBundle monorepo, we do recommend to contribute such new plugins directly to LiveBundle monorepo, unless the plugin being implemented cannot be made publicly available. The advantages of keeping new plugins withing LiveBundle monorepo is that we can ship all the plugins with the CLI distribution, guaranteeing plugins compatibility with each new CLI version and in case of changes in the SDK, we can easily update all plugins present in the monorepo immediately.
+
+## Overview
+
+Implementation should be done in TypeScript if the plugin is to be hosted in LiveBundle CLI monorepo. This is not a requirement, and JavaScript can be used for non monorepo hosted plugins.
+
+As detailed in the [plugins overview](./plugins.md) documentation, LiveBundle plugins fall under four categories, respectively `Bundlers`, `Generators`, `Storage` and `Notifiers`.
+
+When it comes to implementing a plugin, the only difference between these categories, is that each plugin category comes with its own interface to implement.
+
+Overall, implementing a new plugin comes down to:
+
+- Create a new node package for this plugin
+- Implement the constructor of the plugin
+- Implement the interface of the specific plugin category
+- Finally, if the plugin can be configured, expose the configuration schema and optionally environment variables mapping
+
+We will go through each of these high level steps in this documentation.
+
+Also to be noted that we are not expecting to see many new `Generators` plugins. These plugins also would require an update to the native module to be able to handle the new representation(s) produced by such Generators.
+
+## Create a new node package for the plugin
+
+The easiest -for now- here would just be to copy/paste an existing plugin package, and replace its implementation.
+
+- To create a new `Storage` provider plugin, you can start from the [`livebundle-storage-fs`](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs) plugin.
+- To create a new `Bundler` plugin, you can start from the [`livebundle-bundler-metro`](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-bundler-metro) plugin.
+- To create a new `Notifier` plugin, you can start from the [`livebundle-notifier-terminal`](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-notifier-terminal) plugin.
+
+## Implement the plugin constructor
+
+Apart from `Generator` plugins, which have an extra parameter, all plugins constructors will be invoked by LiveBundle with a single parameter, being the plugin configuration *(if any)*.
+
+Not much should be done in the plugin constructor, apart from storing a reference to the supplied configuration.
+
+## Implement the plugin interfaces
+
+Here are the interfaces of every plugin categories.
+
+```typescript
+interface Bundler {
+  bundle(): Promise<LocalBundle[]>;
+}
+```
+
+```typescript
+interface Generator {
+  generate({
+    id,
+    type,
+  }: {
+    id: string;
+    type: LiveBundleContentType;
+  }): Promise<Record<string, unknown>>;
+}
+```
+
+```typescript
+export interface Notifier {
+  notify({
+    generators,
+    pkg,
+    type,
+  }: {
+    generators: Record<string, Record<string, unknown>>;
+    pkg?: Package;
+    type: LiveBundleContentType;
+  }): Promise<void>;
+}
+```
+
+```typescript
+interface Storage {
+  store(
+    content: string,
+    contentLength: number,
+    targetPath: string,
+  ): Promise<string>;
+  storeFile(
+    filePath: string,
+    targetPath: string,
+    options?: {
+      contentType?: string;
+    },
+  ): Promise<string>;
+  hasFile(filePath: string): Promise<boolean>;
+  downloadFile(filePath: string): Promise<Buffer>;
+  readonly baseUrl: string;
+}
+```
+
 ## Configurable Plugins
 
 ### Implementation
