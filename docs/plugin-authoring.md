@@ -46,13 +46,13 @@ Not much should be done in the plugin constructor, apart from storing a referenc
 Here are the interfaces of every plugin categories.
 
 ```typescript
-interface Bundler {
+interface BundlerPlugin {
   bundle(): Promise<LocalBundle[]>;
 }
 ```
 
 ```typescript
-interface Generator {
+interface GeneratorPlugin {
   generate({
     id,
     type,
@@ -64,7 +64,7 @@ interface Generator {
 ```
 
 ```typescript
-export interface Notifier {
+export interface NotifierPlugin {
   notify({
     generators,
     pkg,
@@ -78,7 +78,7 @@ export interface Notifier {
 ```
 
 ```typescript
-interface Storage {
+interface StoragePlugin {
   store(
     content: string,
     contentLength: number,
