@@ -35,11 +35,11 @@ The easiest -for now- here would just be to copy/paste an existing plugin packag
 - To create a new `Bundler` plugin, you can start from the [`livebundle-bundler-metro`](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-bundler-metro) plugin.
 - To create a new `Notifier` plugin, you can start from the [`livebundle-notifier-terminal`](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-notifier-terminal) plugin.
 
-## Implement the plugin constructor
+## Implement the plugin create method
 
-Apart from `Generator` plugins, which have an extra parameter, all plugins constructors will be invoked by LiveBundle with a single parameter, being the plugin configuration *(if any)*.
+Apart from `Generator` plugins, which have an extra parameter, all plugins should expose a static `create` method which will be invoked by LiveBundle with a single parameter, being the plugin configuration *(if any)*.
 
-Not much should be done in the plugin constructor, apart from storing a reference to the supplied configuration.
+Not much should be done in this method, apart from storing a reference to the supplied configuration.
 
 ## Implement the plugin interfaces
 
@@ -123,6 +123,8 @@ public static readonly envVarToConfigKey: Record<string, string> = {
 The convention used by LiveBundle for naming such environment variables is the following
 
 `LB_[PLUGIN_TYPE]_[PLUGIN_NAME]_[PROPERTY_NAME]`
+
+If your plugin is coming with a default configuration, you can declare the `defaultConfig` class property to return this configuration as a JavaScript object.
 
 ### Configuration processing and validation
 
