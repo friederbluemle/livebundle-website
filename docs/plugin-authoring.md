@@ -122,7 +122,7 @@ public static readonly envVarToConfigKey: Record<string, string> = {
 
 The convention used by LiveBundle for naming such environment variables is the following
 
-`LB_[PLUGIN_TYPE]_[PLUGIN_NAME]_[PROPERTY_NAME]`
+`LB_[PLUGIN_CATEGORY]_[PLUGIN_NAME]_[PROPERTY_NAME]`
 
 If your plugin is coming with a default configuration, you can declare the `defaultConfig` class property to return this configuration as a JavaScript object.
 

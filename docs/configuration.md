@@ -35,14 +35,14 @@ storage:
 notifiers:
 ```
 
-Each of these sections represent a specific LiveBundle plugin type *(refer to the [plugins](./plugins.md) documentation for more information about plugins)* and will also in turn contain the following:
+Each of these sections represent a specific LiveBundle plugin category *(refer to the [plugins](./plugins.md) documentation for more information about plugins)* and will also in turn contain the following:
 
-- One or more plugin name(s) matching the plugin type
+- One or more plugin name(s) matching the plugin category
 - The configuration *(if any)* of each of these plugins
 
 LiveBundle uses the following convention for naming LiveBundle plugins packages :
 
-`livebundle-[PLUGIN_TYPE]-[PLUGIN_NAME]`
+`livebundle-[PLUGIN_CATEGORY]-[PLUGIN_NAME]`
 
 For example, LiveBundle storage plugin for Azure is named `livebundle-storage-azure`.
 
@@ -78,7 +78,7 @@ This can be helpful for example for property values that should not be clearly e
 
 These environment variables are using the following naming convention
 
-`LB-[PLUGIN_TYPE]-[PLUGIN_NAME]-[PROPERTY_NAME]`
+`LB-[PLUGIN_CATEGORY]-[PLUGIN_NAME]-[PROPERTY_NAME]`
 
 For example, the [azure storage plugin](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-azure) allow to set the `sasToken` configuration property through `LB_STORAGE_AZURE_SASTOKEN` environement variable.
 
