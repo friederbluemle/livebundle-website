@@ -10,16 +10,8 @@ We recommend keeping the CLI local to your React Native application project, and
 
 To add a dependency on the CLI your can run the following command from your application directory:
 
-Using `yarn`
-
-```bash
-yarn add livebundle
-```
-
-Using `npm`
-
-```bash
-npm instal livebundle --save
+```bash npm2yarn
+npm install --save livebundle
 ```
 
 If you are using `npm` as your package manager, you will also need to add the following in the `scripts` section of your application `package.json` :
@@ -32,15 +24,7 @@ If you are using `npm` as your package manager, you will also need to add the fo
 
 To create an initial LiveBundle configuration file for your application, just run the `init` command from your application project directory
 
-Using `yarn`
-
-```bash
-yarn livebundle init
-```
-
-Using `npm`
-
-```bash
+```bash npm2yarn
 npm run livebundle init
 ```
 
@@ -53,13 +37,7 @@ Because the default configuration file is set to use the [livebundle-storage-fs]
 
 To try out LiveBundle upload, just run the following command:
 
-```bash
-yarn livebundle upload
-```
-
-Using `npm`
-
-```bash
+```bash npm2yarn
 npm run livebundle upload
 ```
 

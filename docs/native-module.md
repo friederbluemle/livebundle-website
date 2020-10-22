@@ -6,18 +6,8 @@ sidebar_label: Native Module setup
 
 ## Installing LiveBundle native module
 
-Add a dependency on `react-native-livebundle`
-
-Using `yarn`
-
-```bash
-yarn add react-native-livebundle
-```
-
-Using `npm`
-
-```bash
-npm instal react-native-livebundle --save
+```bash npm2yarn
+npm install --save react-native-livebundle
 ```
 
 :::warning
