@@ -28,6 +28,11 @@ Starts a LiveBundle live session, generates a QR Code and/or DeepLink and surfac
 
 **Options**
 
+`--config`
+
+Path to a specific LiveBundle configuration file to be used.<br/>
+If this option is not supplied, LiveBundle will look for a configuration file in default locations. _(See [configuration documentation](./configuration.md) for additional details)_
+
 `--cwd`
 
 Path to a directory from which the command should be run from.<br/>
@@ -40,3 +45,10 @@ The computer from which the command is run and the client mobile device have to 
 ## init
 
 Generates a default starter LiveBundle configuration file _(livebundle.yml)_ in current directory.<br/>
+
+**Options**
+
+`--cwd`
+
+Path to a directory from which the command should be run from.<br/>
+If this option is not supllied, the command will be run from the current directory.
