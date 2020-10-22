@@ -2,6 +2,8 @@ module.exports = {
   someSidebar: {
     "LiveBundle": [
       "welcome",
+      "architecture",
+      "contributing"
     ],
     "Getting Started": [
       "cli",
