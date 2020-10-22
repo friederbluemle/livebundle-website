@@ -19,15 +19,20 @@ If you are already using *(or are more familiar with)* a different cloud storage
 
 ## Features
 
+- Push application updates
+- GitHub integration
+- Live Session
+
 ## Comparison with related tools
 
-### Expo
+### [Expo]((https://expo.io/))
 
-TODO
+Expo also uses QRCode and DeepLink to deliver complete React Native applications or application updates to anyone. It is possible to setup a GitHub integration with Expo to automatically attach a QRCode and DeepLink to every Pull Request.<br/>
+That being said, this Expo feature will only work with React Native applications built with Expo, and is not usable as is for non Expo based React Native applications.
 
-### Code Push
+### [CodePush]((https://microsoft.github.io/code-push/))
 
-TODO
+CodePush allows pushing React Native application updates to users. Under the hood it is quite similar to LiveBundle in the sense that updated JS bundles are pushed to a remote storage and then retrieved from the storage and installed on a mobile device. Though CodePush automatically, silently and transparenlty downloads update if an update is available and does not come with QRCode / DeepLink on demand update support. CodePush is geared to rolling updates to your end users in production, while LiveBundle is geared to distributing updates to your team, on demannd, during development. To vulgarize this, we could say that LiveBundle, from the user perspective is a "pull" model, while CodePush is a "push" model.
 
 ## Setup overview
 
@@ -35,10 +40,10 @@ LiveBundle is composed of two top level packages:
 - [`livebundle`](https://github.com/electrode-io/livebundle) *(the command line CLI)*
 - [`react-native-livebundle`](https://github.com/electrode-io/react-native-livebunde) *(the native module)*.
 
-Adding LiveBundle to a React Native application will be detailed through the next sections and consist of the following high level steps :
+Adding LiveBundle to a React Native application is detailed in the Getting Started section and consist of the following high level steps :
 
-1. First we will walk through the installation of the LiveBundle CLI, and creating the initial configuration ([CLI setup](./cli.md))
-2. Then we will tackle the setup and initialization the native module ([Native Module setup](./native-module.md))
-3. Finally we will setup Azure Storage and test our setup end to end ([Azure Storage setup](./azure-storage))
+1. Installing the LiveBundle CLI, and creating its initial configuration _([CLI setup](./cli.md))_
+2. Setting up and initializing the native module _([Native Module setup](./native-module.md))_
+3. Finally, setting up Azure Storage and testing the setup end to end _([Azure Storage setup](./azure-storage))_
 
-Let's get started !
+[Let's get started !](./cli.md)
