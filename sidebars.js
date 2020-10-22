@@ -12,6 +12,7 @@ module.exports = {
       "github"
     ],
     "Reference": [
+      "cli-reference",
       "configuration",
       "plugins",
       "troubleshooting",

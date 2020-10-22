@@ -1,7 +1,7 @@
 ---
 id: azure-storage
-title: Azure Storage setup
-sidebar_label: Azure Storage setup
+title: Azure Storage Setup
+sidebar_label: Azure Storage
 ---
 
 ## Prerequisites

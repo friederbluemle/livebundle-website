@@ -1,7 +1,7 @@
 ---
 id: cli
-title: CLI setup
-sidebar_label: CLI setup
+title: CLI Setup
+sidebar_label: CLI
 ---
 
 ### Installing LiveBundle CLI

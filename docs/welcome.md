@@ -40,7 +40,7 @@ LiveBundle is composed of two top level packages:
 - [`livebundle`](https://github.com/electrode-io/livebundle) *(the command line CLI)*
 - [`react-native-livebundle`](https://github.com/electrode-io/react-native-livebunde) *(the native module)*.
 
-Adding LiveBundle to a React Native application is detailed in the Getting Started section and consist of the following high level steps :
+Adding LiveBundle to a React Native application is detailed in the [Getting Started section](./cli.md) and consist of the following high level steps :
 
 1. Installing the LiveBundle CLI, and creating its initial configuration _([CLI setup](./cli.md))_
 2. Setting up and initializing the native module _([Native Module setup](./native-module.md))_

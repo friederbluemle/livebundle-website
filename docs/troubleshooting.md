@@ -15,11 +15,11 @@ LiveBundle is using the popular [debug](https://www.npmjs.com/package/debug) lib
 To enable all logs run any livebundle command with the `DEBUG` environment set to the following value :
 
 ```bash
-DEBUG=*,-babel* livebundle upload
+DEBUG=livebundle* livebundle upload
 ```
 
 We explicitely exclude `babel` logs, logged by the metro bundler, which are way too verbose.
 
-## Known Issues
+## Known Common Issues
 
 **TODO**

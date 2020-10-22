@@ -1,7 +1,7 @@
 ---
 id: native-module
-title: Native Module setup
-sidebar_label: Native Module setup
+title: Native Module Setup
+sidebar_label: Native Module
 ---
 
 ## Installing LiveBundle native module
@@ -15,7 +15,7 @@ LiveBundle also have a peer dependency on [react-native-camera](https://github.c
 It relies on this native module for its QR Code scanning functionality. If your React Native application is already using this native module, then you don't have anything to do. Otherwise, please make sure to add it to your application and configure the necessary permissions on Android and iOS *(LiveBundle only need permission to access the camera)*.
 :::
 
-## Initializing LiveBundle
+## Initializing LiveBundle native module
 
 LiveBundle native module should be initialized from both the native side, and the JS side.
 
