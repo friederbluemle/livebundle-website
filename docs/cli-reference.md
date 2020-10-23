@@ -38,7 +38,7 @@ If this option is not supplied, LiveBundle will look for a configuration file in
 Path to a directory from which the command should be run from.<br/>
 If this option is not supllied, the command will be run from the current directory.
 
-:::warning
+:::caution
 The computer from which the command is run and the client mobile device have to be connected to the same network.
 :::
 

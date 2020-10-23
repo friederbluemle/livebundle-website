@@ -7,15 +7,17 @@ slug: /
 
 ## Disclaimer
 
-In order to use LiveBundle you will need to provide your own storage for the bundles.
+We do not host your bundles. In order to use LiveBundle you will need to provide your own storage for the bundles.
 
 As of its initial release, LiveBundle ships with support for [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/).
 
 LiveBundle core team has no plan to implement other storage providers plugins *(unless driven by internal needs)*, but will welcome external contributions of such new plugins.
 
-Thus in order to use LiveBundle, if you do not have an Azure account yet, you will need to create one.
+Therefore, in order to use LiveBundle, if you do not have an Azure account yet, you will need to create one.
 
-If you are already using *(or are more familiar with)* a different cloud storage provider, we recommend contributing a new plugin for this specific provider. Even though authoring a new plugin is an advanced topic, documented in our [plugin authoring](./plugin-authoring.md) documentation, it shouldn't be too difficult to implement a new one *(for example the [Azure Blob Storage plugin implementation](https://github.com/electrode-io/livebundle/blob/master/packages/livebundle-storage-azure/src/AzureStorageImpl.ts) fits under a hundred LOC)*.
+:::note
+If you are already using *(or are more familiar with)* a different cloud storage provider, we recommend contributing a new plugin for this specific provider. Even though authoring a new plugin is an advanced topic, documented in our [plugin authoring](./plugin-authoring.md) documentation, it shouldn't be much difficult to implement a new one *(for example, our [Azure Blob Storage plugin implementation](https://github.com/electrode-io/livebundle/blob/master/packages/livebundle-storage-azure/src/AzureStoragePlugin.ts) fits in about a hundred LOC)*.
+:::
 
 ## Features
 
@@ -25,12 +27,12 @@ If you are already using *(or are more familiar with)* a different cloud storage
 
 ## Comparison with related tools
 
-### [Expo]((https://expo.io/))
+### [Expo](https://expo.io/)
 
 Expo also uses QRCode and DeepLink to deliver complete React Native applications or application updates to anyone. It is possible to setup a GitHub integration with Expo to automatically attach a QRCode and DeepLink to every Pull Request.<br/>
 That being said, this Expo feature will only work with React Native applications built with Expo, and is not usable as is for non Expo based React Native applications.
 
-### [CodePush]((https://microsoft.github.io/code-push/))
+### [CodePush](https://microsoft.github.io/code-push/)
 
 CodePush allows pushing React Native application updates to users. Under the hood it is quite similar to LiveBundle in the sense that updated JS bundles are pushed to a remote storage and then retrieved from the storage and installed on a mobile device. Though CodePush automatically, silently and transparenlty downloads update if an update is available and does not come with QRCode / DeepLink on demand update support. CodePush is geared to rolling updates to your end users in production, while LiveBundle is geared to distributing updates to your team, on demannd, during development. To vulgarize this, we could say that LiveBundle, from the user perspective is a "pull" model, while CodePush is a "push" model.
 

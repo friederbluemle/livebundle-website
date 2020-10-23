@@ -10,7 +10,7 @@ The [default configuration file](link_to_repo_default_config_file) generated wit
 
 LiveBundle will search for a file named `livebundle.yml` (or `livebundle.yaml`) in:
 
-- `.` *(the working directory)* _(or the directory supplied via `--cwd` option)_
+- `.` *(the working directory, or the directory supplied via `--cwd` option)_
 - `/etc/livebundle/`
 - `$HOME/`
 

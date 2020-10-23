@@ -17,7 +17,7 @@ const features = [
     ),
   },
   {
-    title: <>GitHub Integration</>,
+    title: <>GitHub Integration Overpowered</>,
     imageUrl: 'img/version_control.svg',
     description: (
 
