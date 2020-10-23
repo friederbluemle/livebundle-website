@@ -15,7 +15,6 @@ LiveBundle is fully open sourced and we welcome contributions !
 If you are facing an issue or you identified a bug, please open an issue ticket in the adequate repository.
 
 For problems with the command line CLI, you can [open an issue in livebundle repository](https://github.com/electrode-io/livebundle/issues).<br/>
-
 For problems with the native module, you can [open an issue in react-native-livebundle repository](https://github.com/electrode-io/react-native-livebundle/issues).
 
 **Improve documentation**
@@ -35,22 +34,21 @@ We label some issues in LiveBundle repositories as `good first issue`. We consid
 
 **Tackle some enhancement**
 
-Similarly to the `good first issue` label, we use the `enhancement` label for any work that would improve LiveBundle. Even though some `enhancement` labelled issues might also be labelled as `good first issue`, most of them will not be and will be challenging. If you feel like you have a good understanding of LiveBundle codebase, you can tackle these ones.
+Similarly to the `good first issue` label, we use the `enhancement` label for any work that would improve LiveBundle. Even though some `enhancement` labelled issues might also be labelled as `good first issue`, most of them will not, and will be challenging. If you feel like you have a good understanding of the LiveBundle codebase, you can tackle these ones or just engage on them to suggest ideas.
 
 - [LiveBundle CLI enchancements](https://github.com/electrode-io/livebundle/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
 - [LiveBundle native enhancements](https://github.com/electrode-io/react-native-livebundle/issues?q=is%3Aissue+is%3Aopen+label%3Agenhancement)
 
-**Suggest an enhancement**
+**Suggest new enhancements**
 
-Finally, you can always suggest some kind of enhancement to make LiveBundle better for everyone.
+If you have ideas for potential LiveBundle enhancements, but don't feel like implementing these enhancements yourself, you can still contribute by submitting such new ideas.
 
 For suggesting an enhancement to the command line CLI, you can [open an issue in livebundle repository](https://github.com/electrode-io/livebundle/issues).<br/>
-
 For suggesting an enhancement to the native module, you can [open an issue in react-native-livebundle repository](https://github.com/electrode-io/react-native-livebundle/issues).
 
 ## Working on LiveBundle CLI
 
-### Technology stack
+### Stack
 
 LiveBundle CLI is written in [TypeScript][9].<br/>
 We use [Yarn](https://yarnpkg.com/) package manager.<br/>
@@ -71,7 +69,7 @@ Debugging can be achieved directly from [Visual Studio Code][5].
 
 To debug the CLI, open the LiveBundle project in Visual Studio Code and run `yarn debug` from a Visual Studio code terminal *(important, otherwise Visual Studio code will not auto attach debugger)*.
 
-This is equivalent to running the `livebundle` CLI executable, but with debugging enabled.
+This is equivalent to running the `livebundle` CLI executable _(as if running `yarn livebundle`)_, but with debugging enabled.
 It is thus possible to provide any supported livebundle command and option(s) as if directly running the `livebundle` CLI.
 
 ### Mocha Tests

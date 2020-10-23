@@ -12,7 +12,7 @@ const features = [
     imageUrl: 'img/collaboration.svg',
     description: (
       <>
-        Quickly share any application changes, anytime, with anyone. LiveBundle produce a QR Code that can just be scanned from the application, or a deeplink that can be navigated to.
+        Quickly share any application changes, anytime, with anyone. LiveBundle generates a QR Code that can just be scanned from the application, or a deeplink that can be navigated to.
       </>
     ),
   },
@@ -21,9 +21,9 @@ const features = [
     imageUrl: 'img/version_control.svg',
     description: (
 
-      
+
       <>
-LiveBundle comes with a GitHub application. Just add it to your repository, and LiveBundle will automatically post a QR Code and deep link on every pull request. Neat !
+LiveBundle comes with GitHub integration.<br/>If configured, LiveBundle will automatically post a QR Code and deep link on every pull request. Neat !
       </>
     ),
   },
@@ -32,7 +32,7 @@ LiveBundle comes with a GitHub application. Just add it to your repository, and 
     imageUrl: 'img/open_source.svg',
     description: (
       <>
-       We dont expose a public infrastructure. We do however expose everything needed to deploy LiveBundle to your infrastructure or any public cloud provider, and make it your own.
+       LiveBundle is fully open sourced.<br/>You just need to provide your own storage.
       </>
     ),
   },

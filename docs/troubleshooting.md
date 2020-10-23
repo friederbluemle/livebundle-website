@@ -18,8 +18,6 @@ To enable all logs run any livebundle command with the `DEBUG` environment set t
 DEBUG=livebundle* livebundle upload
 ```
 
-We explicitely exclude `babel` logs, logged by the metro bundler, which are way too verbose.
-
 ## Known Common Issues
 
 **TODO**

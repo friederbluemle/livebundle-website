@@ -10,7 +10,7 @@ The [default configuration file](link_to_repo_default_config_file) generated wit
 
 LiveBundle will search for a file named `livebundle.yml` (or `livebundle.yaml`) in:
 
-- `.` *(the working directory)*
+- `.` *(the working directory)* _(or the directory supplied via `--cwd` option)_
 - `/etc/livebundle/`
 - `$HOME/`
 
@@ -84,5 +84,5 @@ For example, the [azure storage plugin](https://github.com/electrode-io/livebund
 
 :::warning
 A configuration property value can either be set directly in the yaml configuration file, or through an environment variable, but not both.
-If that's the case, LiveBundle will fail and report the ambiguity.
-
+If this happens, LiveBundle upload command will fail and report the ambiguity.
+:::
