@@ -21,11 +21,24 @@ If you are already using *(or are more familiar with)* a different cloud storage
 
 ## Features
 
-- Push application updates
-- GitHub integration
-- Live Session
+### Distribute updates as a QR Code / Deep Link
 
-## Comparison with related tools
+LiveBundle allows to distribute application updates as a QR Code and/or Deep Link.<br/>
+From the comfort of a terminal, any application developer can quickly publish any work in progress and share the resulting QR Code / Deep Link with anyone. Installing the changes is as easy as scanning the QR Code from the application or navigating the Deep Link.
+
+### GitHub Integration
+
+LiveBundle comes with a GitHub integration, to automatically package and publish changes associated to every opened PR. It will then post the resulting QR Code and Deep Link as a PR comment. Supercharge your reviews by trying the changes directly within the application !
+
+### Live Session
+
+Additionally, LiveBundle expose a command to generate a QR Code / Deep Link for other users to directly connect to your local React Native bundler *(metro server)*.
+
+### Plugin Based Architecture
+
+LiveBundle can be easilly extended with new functionallity thanks to its plugin based architecture. Need a different storage provider ? A different bundler or new notifiers ? Just write a new plugin !
+
+## Comparison with related React Native tools
 
 ### [Expo](https://expo.io/)
 

@@ -59,18 +59,18 @@ If you haven't done it already, now is the time to update this url to the one po
 
 With that being done, let's now try the setup end to end.
 
-### Uploading an update
+### Uploading an application update
 
 Update something in your React Native application *(ideally some kind of visual change so that you can easily see it when installed)* and run the `livebundle upload` command from the root directory of your React Native application.<br/>
 When the upload is complete, a QR Code and Deep Link will be generated.
 
-### Loading the update
+### Installing the update
 
 Launch your React Native application and bring up the React Native developer menu on screen, then tap on `LiveBundle` to launch the LiveBundle menu and finally tap the `Scan` button to bring up the QR Code scanner. Then just scan the QR Code that was generated during the previous step. LiveBundle will retrieve the update and should reload your application with it.
 
 If you want to try out loading the update using the Deep Link, you can send the link to yourself on Slack, and clicking the link from your phone.
 
-### Rolling back the update
+### Rolling it back
 
 To roll back the update, just launch LiveBundle menu and tap the `Reset` button.<br/>
 LiveBundle will "roll back" to use the bundle that was loaded prior to installing the update, and will reload the application with it.

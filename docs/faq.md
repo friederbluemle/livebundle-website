@@ -11,4 +11,4 @@ To achieve this, either from terminal or CI, you should first generate a composi
 
 ### Does LiveBundle supports pushing native code changes
 
-LiveBundle does not support pushing native code change, only JavaScript code changes. You should go through a complete application build to distribute any kind of native changes.
+LiveBundle only supports pushing JavaScript changes. You should go through a complete application build to distribute any kind of native changes.
