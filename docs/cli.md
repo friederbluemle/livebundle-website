@@ -29,11 +29,9 @@ npm run livebundle init
 ```
 
 The `init` command will generate a new `livebundle.yml` configuration file in your React Native application directory.
-This configuration file will work out of the box, but is configured to use the [livebundle-storage-fs](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs) storage plugin to store the bundles. This means that the bundles will be stored in a local directory. This is great for trying out LiveBundle CLI, but is very limited as it will not work to download bundles from the phone.
+This configuration file will work out of the box, but is configured to use the [livebundle-storage-fs](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs) storage plugin to store the bundles. This means that the bundles will be stored in a local directory (`[HOME]/.livebundle/storage`).<br/>
 
 ### Trying the CLI
-
-Because the default configuration file is set to use the [livebundle-storage-fs](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs) storage provider to store the bundles in a local temporary directory, it is possible to try out the `livebundle upload` command out of the box before having an Azure Blob Storage available.
 
 To try out LiveBundle upload, just run the following command:
 
@@ -41,4 +39,6 @@ To try out LiveBundle upload, just run the following command:
 npm run livebundle upload
 ```
 
-The default configuration file will inform LiveBundle to generate a single bundle *(android / dev)* and upload it to ephemeral storage *(local temporrary directory)* along with generating QR Code and Deep Link representations. It will then surface these representations in the terminal and in an image viewer _(for the QR Code)_.
+The default configuration file will inform LiveBundle to generate two dev bundle *(android/ios)* and store them in `[HOME]/.livebundle/storage`, along with generating QR Code and Deep Link representations. It will then surface these representations in the terminal and in an image viewer _(for the QR Code)_.
+
+Now that we're done with the CLI, it is time to add and initialize the native module.

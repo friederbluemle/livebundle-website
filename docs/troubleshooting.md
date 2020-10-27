@@ -17,7 +17,3 @@ To enable all logs run any livebundle command with the `DEBUG` environment set t
 ```bash
 DEBUG=livebundle* livebundle upload
 ```
-
-## Known Common Issues
-
-**TODO**

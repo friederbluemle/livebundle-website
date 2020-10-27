@@ -7,17 +7,13 @@ slug: /
 
 ## Disclaimer
 
-We do not host your bundles. In order to use LiveBundle you will need to provide your own storage for the bundles.
+We do not host your JavaScript bundles. In order to use LiveBundle you will need to provide your own storage for the bundles.
 
-As of its initial release, LiveBundle ships with support for [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/).
+As of its initial release, LiveBundle ships with [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/) support.
 
-LiveBundle core team has no plan to implement other storage providers plugins *(unless driven by internal needs)*, but will welcome external contributions of such new plugins.
+Our core team has no plan to implement other cloud storage providers plugins *(unless driven by internal needs)*, but will welcome external contributions of such new plugins !
 
-Therefore, in order to use LiveBundle, if you do not have an Azure account yet, you will need to create one.
-
-:::note
-If you are already using *(or are more familiar with)* a different cloud storage provider, we recommend contributing a new plugin for this specific provider. Even though authoring a new plugin is an advanced topic, documented in our [plugin authoring](./plugin-authoring.md) documentation, it shouldn't be much difficult to implement a new one *(for example, our [Azure Blob Storage plugin implementation](https://github.com/electrode-io/livebundle/blob/master/packages/livebundle-storage-azure/src/AzureStoragePlugin.ts) fits in about a hundred LOC)*.
-:::
+Therefore, at this point, if you wish to use LiveBundle for your application, you will either need to use to provision and use an Azure Blob Storage account, or implement a new storage provider plugin to use another cloud storage provider or some other storage setup.
 
 ## Features
 
@@ -59,6 +55,6 @@ Adding LiveBundle to a React Native application is detailed in the [Getting Star
 
 1. Installing the LiveBundle CLI, and creating its initial configuration _([CLI setup](./cli.md))_
 2. Setting up and initializing the native module _([Native Module setup](./native-module.md))_
-3. Finally, setting up Azure Storage and testing the setup end to end _([Azure Storage setup](./azure-storage))_
+3. Finally, setting up the storage and testing LiveBundle end to end _([Azure Storage setup](./azure-storage))_
 
 [Let's get started !](./cli.md)

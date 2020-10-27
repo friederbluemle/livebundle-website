@@ -8,7 +8,7 @@ module.exports = {
     "Getting Started": [
       "cli",
       "native-module",
-      "azure-storage",
+      "storage",
       "github"
     ],
     "Reference": [

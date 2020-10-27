@@ -29,12 +29,26 @@ First, add the following import statement
 import io.livebundle.LiveBundle;
 ```
 
-Then, in the `onCreate` method, you should make a call to the `initialize` method of `LiveBundle` as follow
+Then, in the `onCreate` method, you should make a call to the `initialize` method of `LiveBundle` as follow:
+
+**HTTP Server Storage**
+
+To quickly locally try out LiveBundle end to end with your application, we recommend using a local HTTP server storage at first _(we will cover spinning up an HTTP server with one command in the next section)_. The bundles will be served from your `localhost` so you can initialize LiveBundle as follow
 
 ```java
 LiveBundle.initialize(
   getReactNativeHost(),
-  "https://[AZURE_ACCOUNT].blob.core.windows.net/[AZURE_CONTAINER]/");
+  "http://127.0.0.1/");
+```
+
+**Azure Blob Storage**
+
+While we recommend first getting a hand on LiveBundle using a local HTTP server, here is how to initialize LiveBundle with an Azure Blob Storage account.
+
+```java
+LiveBundle.initialize(
+  getReactNativeHost(),
+  "https://[AZURE_ACCOUNT].blob.core.windows.net/[AZURE_CONTAINER]");
 ```
 
 Your should replace `[AZURE_ACCOUNT]` and `[AZURE_CONTAINER]` with values specific to your Azure account. If you don't have an Azure account yet available, you can use a fake url. LiveBundle will only make request to the URL when scanning a QR Code or navigating a Deep Link. This way you'll still be able to validate that you can launch LiveBundle from your application.
@@ -65,7 +79,13 @@ Tapping on it should bring the LiveBundle menu on screen with its `Scan` button.
 
 You can also try to launch LiveBundle menu by navigating a Deep Link, which can be of use in case your application build does not give access to the React Native developer menu.
 
-`livebundle://menu`
+One way to achieve this on Android is to run an `adb` command _(with an emulator or a connected device)_.
 
-TODO : `adb` command, and mention Slack
+```bash
+adb shell am start -W -a android.intent.action.VIEW -d "livebundle://menu" [APP_PACKAGE_NAME]
+```
+
+Where `[APP_PACKAGE_NAME]` is your application package name _(which can be found in your AndroidManifest.xml)_
+
+If you have Slack installed on the device running your application, you can also send yourself a message with the `livebundle://menu` Deep Link and tap on it. Not all applications properly convert custom schemes links to browsable links _(clickable)_ but Slack does _(and surely a few other messaging apps as well)_
 
