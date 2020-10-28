@@ -34,7 +34,7 @@ Additionally, LiveBundle expose a command to generate a QR Code / Deep Link for 
 
 LiveBundle can be easilly extended with new functionallity thanks to its plugin based architecture. Need a different storage provider ? A different bundler or new notifiers ? Just write a new plugin !
 
-## Comparison with related React Native tools
+## Comparison with other React Native tools
 
 ### [Expo](https://expo.io/)
 
@@ -57,4 +57,8 @@ Adding LiveBundle to a React Native application is detailed in the [Getting Star
 2. Setting up and initializing the native module _([Native Module setup](./native-module.md))_
 3. Finally, setting up the storage and testing LiveBundle end to end _([Azure Storage setup](./azure-storage))_
 
-[Let's get started !](./cli.md)
+## Quick Start
+
+If you'd first like to try out LiveBundle very quickly before integrating it with your application, you can try the LiveBundle demo application. Just follow instructions from [its README](https://github.com/electrode-io/react-native-livebundle/blob/master/example/README.md).
+
+Otherwise, if you want to jump straight ahead, adding LiveBundle to your application, then without further due, [let's get started !](./cli.md)
