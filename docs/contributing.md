@@ -14,53 +14,53 @@ LiveBundle is fully open sourced and we welcome contributions !
 
 If you are facing an issue or you identified a bug, please open an issue ticket in the adequate repository.
 
-For problems with the command line CLI, you can [open an issue in livebundle repository](https://github.com/electrode-io/livebundle/issues/new).<br/>
-For problems with the native module, you can [open an issue in react-native-livebundle repository](https://github.com/electrode-io/react-native-livebundle/issues/new).
+For problems with the command line CLI, you can [open an issue in livebundle repository][1].<br/>
+For problems with the native module, you can [open an issue in react-native-livebundle repository][2].
 
 **Improve documentation**
 
-If you identified a typo in our documentation, or if something is not properly explained or if you just want to contribute new documentation, you can open a Pull Request to the [livebundle-website](https://github.com/electrode-io/livebundle-website) repository.
+If you identified a typo in our documentation, or if something is not properly explained or if you just want to contribute new documentation, you can open a Pull Request to the [livebundle-website][3] repository.
 
 **Write a new LiveBundle CLI plugin**
 
-The LiveBundle CLI is highly modular thanks to its [plugin based architecture](./architecture). If you would like to contribute a new plugin to make LiveBundle even better, you can refer to our [plugin authoring documentation](./plugin-authoring.md). When you're ready, just open a PR to [livebundle repository](https://github.com/electrode-io/livebundle).
+The LiveBundle CLI is highly modular thanks to its [plugin based architecture](./architecture). If you would like to contribute a new plugin to make LiveBundle even better, you can refer to our [plugin authoring documentation](./plugin-authoring.md). When you're ready, just open a PR to [livebundle repository][4].
 
 **Tackle an easy first task**
 
 We label some issues in LiveBundle repositories as `good first issue`. We consider these issues to be easy enough to be tackled by new contributors not yet super familiar with LiveBundle codebase and architecture.
 
-- [LiveBundle CLI good first issues](https://github.com/electrode-io/livebundle/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue)
-- [LiveBundle native module good first issues](https://github.com/electrode-io/react-native-livebundle/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue)
+- [LiveBundle CLI good first issues][5]
+- [LiveBundle native module good first issues][6]
 
 **Tackle some enhancement**
 
 Similarly to the `good first issue` label, we use the `enhancement` label for any work that would improve LiveBundle. Even though some `enhancement` labelled issues might also be labelled as `good first issue`, most of them will not, and will be challenging. If you feel like you have a good understanding of the LiveBundle codebase, you can tackle these ones or just engage on them to suggest ideas.
 
-- [LiveBundle CLI enchancements](https://github.com/electrode-io/livebundle/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
-- [LiveBundle native enhancements](https://github.com/electrode-io/react-native-livebundle/issues?q=is%3Aissue+is%3Aopen+label%3Agenhancement)
+- [LiveBundle CLI enchancements][7]
+- [LiveBundle native enhancements][8]
 
 **Suggest improvements or new features**
 
 If you have ideas for potential LiveBundle enhancements, but don't feel like implementing these enhancements yourself, you can still contribute by submitting such new ideas.
 
-For suggesting an enhancement to the command line CLI, you can [open an issue in livebundle repository](https://github.com/electrode-io/livebundle/issues/new).<br/>
-For suggesting an enhancement to the native module, you can [open an issue in react-native-livebundle repository](https://github.com/electrode-io/react-native-livebundle/issues/new).
+For suggesting an enhancement to the command line CLI, you can [open an issue in livebundle repository][1].<br/>
+For suggesting an enhancement to the native module, you can [open an issue in react-native-livebundle repository][2].
 
-## Working on LiveBundle CLI
+## LiveBundle CLI Development
 
 ### Stack
 
-LiveBundle CLI is written in [TypeScript][9].<br/>
-We use [Yarn](https://yarnpkg.com/) package manager.<br/>
-[Visual Studio Code][5] is our main development IDE. This IDE is not a requirement to work on LiveBundle but it integrates nicely with our development process and tools.<br/>
+[LiveBundle CLI][4] is written in [TypeScript][9].<br/>
+We use [Yarn][9] package manager.<br/>
+[Visual Studio Code][17] is our main development IDE. This IDE is not a requirement to work on LiveBundle but it integrates nicely with our development process and tools.<br/>
 Our test suites are written using [Mocha][10] and [Sinon.JS][11].
 LiveBundle is using [Istanbul][12] to compute test coverage and [CodeCov][13] for online coverage reports.<br/>
 We use [ESLint][15] and [Prettier][16] for linting and code styling.
 
 ### Development Setup
 
-- Make sure you have [Yarn](https://yarnpkg.com/) installed.
-- Fork the [LiveBundle CLI](https://github.com/electrode-io/livebundle) repository and clone your fork locally.
+- Make sure you have [Yarn][9] installed.
+- Fork the [LiveBundle CLI][4] repository and clone your fork locally.
 - Run `yarn install` from the directory in which you have cloned the project.
 
 ### Debugging
@@ -82,7 +82,7 @@ To debug the tests, launch `Mocha Tests` debug configuration from the IDE.
 
 ### Logging
 
-LiveBundle is using the [debug][6] library to for logging.<br/>Please refer to this library documentation for reference.<br/>
+LiveBundle is using the [debug][18] library to for logging.<br/>Please refer to this library documentation for reference.<br/>
 In a nutshell, to enable all LiveBundle logs, just set `DEBUG=livebundle*` environment variable.
 
 ### Before opening a PR
@@ -124,19 +124,28 @@ Ideally you should add tests to cover all newly introduced code. This is not a s
     └── settings.json     // VSCode workspace configuration
 ```
 
-## Working on LiveBundle Native Module
+## LiveBundle Native Module Development
 
-**TODO**
+### Stack
 
-[1]: https://github.com/electrode-io/livebundle/workflows/ci/badge.svg
-[2]: https://github.com/electrode-io/livebundle/actions
-[3]: https://codecov.io/gh/electrode-io/livebundle/branch/master/graph/badge.svg?token=97VWVN63G0
-[4]: https://codecov.io/gh/electrode-io/livebundle
-[5]: https://code.visualstudio.com/
-[6]: https://www.npmjs.com/package/debug
-[7]: https://livebundle.io
-[8]: https://docs.livebundle.io
-[9]: https://www.typescriptlang.org/
+As most standard React Native native modules, [LiveBundle native module][19] is written using a mix of JavaScript, ObjectiveC and Java.<br/>
+We unfortunately don't have any tests yet, so testing, is currently limited to manual testing using the example application part of the native module repository.
+
+### Development Setup
+
+- Make sure you have [Yarn][9] installed.
+- Fork the [LiveBundle native module][19] repository and clone your fork locally.
+- Follow the instructions [in the example app README][20] to get started with development.
+
+[1]: https://github.com/electrode-io/livebundle/issues/new
+[2]: https://github.com/electrode-io/react-native-livebundle/issues/new
+[3]: https://github.com/electrode-io/livebundle-website
+[4]: https://github.com/electrode-io/livebundle
+[5]: https://github.com/electrode-io/livebundle/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue
+[6]: https://github.com/electrode-io/react-native-livebundle/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue
+[7]: https://github.com/electrode-io/livebundle/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement
+[8]: https://github.com/electrode-io/react-native-livebundle/issues?q=is%3Aissue+is%3Aopen+label%3Agenhancement
+[9]: https://yarnpkg.com/
 [10]: https://mochajs.org/
 [11]: https://sinonjs.org/
 [12]: https://istanbul.js.org/
@@ -144,3 +153,7 @@ Ideally you should add tests to cover all newly introduced code. This is not a s
 [14]: https://yarnpkg.com/
 [15]: https://eslint.org/
 [16]: https://prettier.io/
+[17]: https://code.visualstudio.com/
+[18]: https://www.npmjs.com/package/debug
+[19]: https://github.com/electrode-io/react-native-livebundle
+[20]: https://github.com/electrode-io/react-native-livebundle/blob/master/example/README.md

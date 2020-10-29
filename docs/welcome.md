@@ -5,6 +5,8 @@ sidebar_label: Welcome
 slug: /
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Disclaimer
 
 We do not host your JavaScript bundles. In order to use LiveBundle you will need to provide your own storage for the bundles.
@@ -22,6 +24,8 @@ Therefore, at this point, if you wish to use LiveBundle for your application, yo
 LiveBundle allows to distribute application updates as a QR Code and/or Deep Link.<br/>
 From the comfort of a terminal, any application developer can quickly publish any work in progress and share the resulting QR Code / Deep Link with anyone. Installing the changes is as easy as scanning the QR Code from the application or navigating the Deep Link.
 
+<img alt="LiveBundle Architecture Overview" src={useBaseUrl('img/lbupload.png')} width="400"/>
+
 ### GitHub Integration
 
 LiveBundle comes with a GitHub integration, to automatically package and publish changes associated to every opened PR. It will then post the resulting QR Code and Deep Link as a PR comment. Supercharge your reviews by trying the changes directly within the application !
@@ -38,12 +42,13 @@ LiveBundle can be easilly extended with new functionallity thanks to its plugin 
 
 ### [Expo](https://expo.io/)
 
-Expo also uses QRCode and DeepLink to deliver complete React Native applications or application updates to anyone. It is possible to setup a GitHub integration with Expo to automatically attach a QRCode and DeepLink to every Pull Request.<br/>
+While Expo is much more than just application delivery, it uses QRCode and DeepLink to deliver complete React Native applications or application updates to anyone. It is also possible to setup a GitHub integration with Expo to automatically attach a QRCode and DeepLink to every Pull Request.<br/>
 That being said, this Expo feature will only work with React Native applications built with Expo, and is not usable as is for non Expo based React Native applications.
 
 ### [CodePush](https://microsoft.github.io/code-push/)
 
-CodePush allows pushing React Native application updates to users. Under the hood it is quite similar to LiveBundle in the sense that updated JS bundles are pushed to a remote storage and then retrieved from the storage and installed on a mobile device. Though CodePush automatically, silently and transparenlty downloads update if an update is available and does not come with QRCode / DeepLink on demand update support. CodePush is geared to rolling updates to your end users in production, while LiveBundle is geared to distributing updates to your team, on demannd, during development. To vulgarize this, we could say that LiveBundle, from the user perspective is a "pull" model, while CodePush is a "push" model.
+CodePush allows pushing React Native application updates to users. Under the hood it is quite similar to LiveBundle in the sense that updated JS bundles are pushed to a remote storage and then retrieved from the storage and installed on a mobile device. Though CodePush automatically, silently and transparenlty downloads update if an update is available and does not come with QRCode / DeepLink on demand update support.<br/>
+CodePush is geared to rolling updates to your end users in production, while LiveBundle is geared to distributing updates to your team, on demannd, during development. To vulgarize this, we could say that LiveBundle, from the user perspective is a "pull" model, while CodePush is a "push" model.
 
 ## Setup overview
 
