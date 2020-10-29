@@ -19,7 +19,7 @@ This option can be of help in case you have different LiveBundle configuration f
 
 ## File Structure
 
-A LiveBundle configuration file is a [`yaml`](https://yaml.org/) file, composed of four main sections:
+A LiveBundle configuration file is a [`yaml`][1] file, composed of four main sections:
 
 ```yaml
 # Bundler plugin declaration & configuration
@@ -80,9 +80,12 @@ These environment variables are using the following naming convention
 
 `LB-[PLUGIN_CATEGORY]-[PLUGIN_NAME]-[PROPERTY_NAME]`
 
-For example, the [azure storage plugin](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-azure) allow to set the `sasToken` configuration property through `LB_STORAGE_AZURE_SASTOKEN` environement variable.
+For example, the [azure storage plugin][2] allow to set the `sasToken` configuration property through `LB_STORAGE_AZURE_SASTOKEN` environement variable.
 
 :::warning
 A configuration property value can either be set directly in the yaml configuration file, or through an environment variable, but not both.
 If this happens, LiveBundle upload command will fail and report the ambiguity.
 :::
+
+[1]: https://yaml.org/
+[2]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-azure

@@ -12,7 +12,7 @@ Now that we have completed the [CLI setup](./cli) and the [Native Module setup](
 If you've already configured the native module to use an Azure Blob Storage account, you should  skip this section and instead directly go through `Switching to Azure storage` at the bottom of this page.
 :::
 
-We will use [http-server](https://github.com/http-party/http-server), a simple Node HTTP server that can be started very easily.
+We will use [http-server][1], a simple Node HTTP server that can be started very easily.
 
 From a terminal, we will `cd` into the directory where LiveBundle store the bundles. If you haven't altered the default location _(in livebundle.yml config)_ it will be in `[HOME]/.livebundle/storage` _(where `[HOME]` is the home directory of your workstation)_. We will then just start the HTTP server from this directory.
 
@@ -97,3 +97,5 @@ LiveBundle.initialize(
 ```
 
 If you haven't done it already, now is the time to update this url to the one pointing to the real Azure Blob Storage container. Just replace `[AZURE-ACCOUNT]` and `[AZURE_CONTAINER]` placeholders with values matching your Azure Blob Storage account.
+
+[1]: https://github.com/http-party/http-server

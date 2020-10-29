@@ -31,9 +31,9 @@ Also to be noted that we are not expecting to see many new `Generators` plugins.
 
 The easiest -for now- here would just be to copy/paste an existing plugin package, and replace its implementation.
 
-- To create a new `Storage` provider plugin, you can start from the [`livebundle-storage-fs`](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs) plugin.
-- To create a new `Bundler` plugin, you can start from the [`livebundle-bundler-metro`](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-bundler-metro) plugin.
-- To create a new `Notifier` plugin, you can start from the [`livebundle-notifier-terminal`](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-notifier-terminal) plugin.
+- To create a new `Storage` provider plugin, you can start from the [`livebundle-storage-fs`][1] plugin.
+- To create a new `Bundler` plugin, you can start from the [`livebundle-bundler-metro`][2] plugin.
+- To create a new `Notifier` plugin, you can start from the [`livebundle-notifier-terminal`][3] plugin.
 
 ## Implement the plugin create method
 
@@ -137,3 +137,7 @@ Internally, LiveBundle will preprocess and validate each plugin configuration as
     - If the configuration property is defined both as the env var and in yaml config, fail configuration loading and report ambiguity.
 3. Merge the configuration with the default configuration of the plugin. This means that LiveBundle will use the default value of any missing configuration property.
 4. Finally, validate the final configuration against the JSON schema.
+
+[1]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs
+[2]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-bundler-metro
+[3]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-notifier-terminal

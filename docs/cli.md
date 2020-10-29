@@ -29,7 +29,7 @@ npm run livebundle init
 ```
 
 The `init` command will generate a new `livebundle.yml` configuration file in your React Native application directory.
-This configuration file will work out of the box, but is configured to use the [livebundle-storage-fs](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs) storage plugin to store the bundles. This means that the bundles will be stored in a local directory (`[HOME]/.livebundle/storage`).<br/>
+This configuration file will work out of the box, but is configured to use the [livebundle-storage-fs][1] storage plugin to store the bundles. This means that the bundles will be stored in a local directory (`[HOME]/.livebundle/storage`).<br/>
 
 ### Trying the CLI
 
@@ -42,3 +42,5 @@ npm run livebundle upload
 The default configuration file will inform LiveBundle to generate two dev bundle *(android/ios)* and store them in `[HOME]/.livebundle/storage`, along with generating QR Code and Deep Link representations. It will then surface these representations in the terminal and in an image viewer _(for the QR Code)_.
 
 Now that we're done with the CLI, it is time to add and initialize the native module.
+
+[1]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs

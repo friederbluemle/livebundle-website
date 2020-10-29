@@ -19,7 +19,7 @@ This section contains a list of all the plugins that are currently shipped with 
 Bunders plugins are in charge of generating one or more JavaScript bundles.
 
 ### Metro
-[livebundle-bundler-metro](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-bundler-metro)
+[livebundle-bundler-metro][1]
 
 The `metro` bundler plugin is using the default React Native bundler *(Metro)* to generate the bundle(s).
 
@@ -43,7 +43,7 @@ LiveBundle will upload all generated bundles to the storage.
 Generators plugins are in charge of generating *(and also storing if necessary)* a "representations" of LiveBundle packages *(containing one or more bundles)* that can be used by the mobile application to retrieve associated packages. LiveBundle comes with two generators out of the box.
 
 ### QR Code
-[livebundle-generator-qrcode](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-generator-qrcode)
+[livebundle-generator-qrcode][2]
 
 ***Default configuration***
 
@@ -60,7 +60,7 @@ The `qrcode` generator is in charge of generating a QR Code *(image file and asc
 Scanning a generated QR Code with LiveBundle from the mobile application, will load and install the corresponding LiveBundle package.
 
 ### Deep Link
-[livebundle-generator-deeplink](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-generator-deeplink)
+[livebundle-generator-deeplink][3]
 
 ***Not configurable***
 
@@ -73,11 +73,11 @@ Navigating to a generated Deep Link, will load and install the corresponding Liv
 Storage plugins are in charge of storing the LiveBundle package along with any other files *(QRCode image, package metadata ...)* to a local or remote store. LiveBundle ships with two such plugins.
 
 ### Azure
-[livebundle-storage-azure](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-azure)
+[livebundle-storage-azure][4]
 
 ***No default configuration***
 
-The Azure storage plugin can be used to store LiveBundle packages in an [Azure Blob Storage](https://azure.microsoft.com/en-us/services/storage/blobs/) container. It does not come with a default configuration. The following configuration illustrates all available configuration properties.
+The Azure storage plugin can be used to store LiveBundle packages in an [Azure Blob Storage][5] container. It does not come with a default configuration. The following configuration illustrates all available configuration properties.
 
 ```yaml
 storage:
@@ -102,7 +102,7 @@ storage:
 ```
 
 ### Local File System
-[livebundle-storage-fs](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs)
+[livebundle-storage-fs][6]
 
 The `fs` storage plugin can be used to store LiveBundle packages in a local directory.
 It has no real use apart from testing/development purposes.
@@ -122,21 +122,21 @@ storage:
 Notifiers are in charge of surfacing the different representations *(QR Code, Deep Link ...)* to the users, so that they can be used to load a LiveBundle package in the application.
 
 ### Terminal
-[livebundle-notifier-terminal](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-notifier-terminal)
+[livebundle-notifier-terminal][7]
 
 The `terminal` notifier plugin will display the different representations in a terminal. It supports notification of QR Code representation *(will show the ascii generated QR Code)* as well as Deep Link *(will show the deep link itself)*.
 
 ***Not configurable***
 
 ### Viewer
-[livebundle-notifier-viewer](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-notifier-viewer)
+[livebundle-notifier-viewer][8]
 
 The `viewer` notifier will only notify QR Code representations. It will open the QR Code image in the default application used for images viewing.
 
 ***Not configurable***
 
 ### GitHub
-[livebundle-notifier-github](https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-notifier-github)
+[livebundle-notifier-github][9]
 
 The `github` notifier supports both QR Code and Deep Link representations.
 It can be used to automatically post a comment with the LiveBundle QR Code and Deep Link in every opened pull request.
@@ -157,5 +157,12 @@ In case you are not using GitHub actions but are instead using a different CI en
 
 If you are using GitHub enterprise, you should also make sure to update the default `baseUrl` configuration property value, to use your GitHub enterpise base url instead.
 
-
-
+[1]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-bundler-metro
+[2]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-generator-qrcode
+[3]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-generator-deeplink
+[4]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-azure
+[5]: https://azure.microsoft.com/en-us/services/storage/blobs/
+[6]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs
+[7]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-notifier-terminal
+[8]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-notifier-viewer
+[9]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-notifier-github
