@@ -43,7 +43,7 @@ LiveBundle.initialize(
 
 **Azure Blob Storage**
 
-While we recommend first getting a hand on LiveBundle using a local HTTP server, here is how to initialize LiveBundle with an Azure Blob Storage account.
+Here is how to initialize LiveBundle with an Azure Blob Storage account if you have such an account.
 
 ```java
 LiveBundle.initialize(
@@ -51,7 +51,7 @@ LiveBundle.initialize(
   "https://[AZURE_ACCOUNT].blob.core.windows.net/[AZURE_CONTAINER]");
 ```
 
-Your should replace `[AZURE_ACCOUNT]` and `[AZURE_CONTAINER]` with values specific to your Azure account. If you don't have an Azure account yet available, you can use a fake url. LiveBundle will only make request to the URL when scanning a QR Code or navigating a Deep Link. This way you'll still be able to validate that you can launch LiveBundle from your application.
+Your should replace `[AZURE_ACCOUNT]` and `[AZURE_CONTAINER]` with values specific to your Azure account.
 
 :::info
 The `initialize` method also accepts a third optional parameter, respectively an Azure SAS token to use to download the bundles *(In case your Azure Blob Storage container does not allow public blob reads, you can use such a token for blob reads)*
