@@ -14,4 +14,4 @@ To achieve this, either from terminal or CI, you should first generate a composi
 LiveBundle only supports pushing JavaScript changes. You should go through a complete application build to distribute any kind of native changes.
 
 [1]: https://github.com/electrode-io/electrode-native
-[2]; https://native.electrode.io/cli-commands/create-composite
+[2]: https://native.electrode.io/cli-commands/create-composite

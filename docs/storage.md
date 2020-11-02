@@ -53,7 +53,7 @@ LiveBundle will "roll back" to use the bundle that was loaded prior to installin
 
 ## Switching to Azure storage
 
-Using LiveBundle `fs-storage` alongside with an HTTP sever works well for demo and testing purposes, but will not work for real use, where multiple developers and potentially CI with GitHub integration will need to upload bundles to the storage. Indeed the `fs-storage` is only local to a specific workstation and cannot be shared for uploads.
+Using LiveBundle `fs-storage` alongside with an HTTP server works well for demo and testing purposes, but will not work for real use, where multiple developers and potentially CI with GitHub integration will need to upload bundles to the storage. Indeed the `fs-storage` is only local to a specific workstation and cannot be shared for uploads.
 
 ### Updating LiveBundle CLI configuration
 
