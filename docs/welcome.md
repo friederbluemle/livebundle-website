@@ -24,11 +24,13 @@ Therefore, at this point, if you wish to use LiveBundle for your application, yo
 LiveBundle allows to distribute application updates as a QR Code and/or Deep Link.<br/>
 From the comfort of a terminal, any application developer can quickly publish any work in progress and share the resulting QR Code / Deep Link with anyone. Installing the changes is as easy as scanning the QR Code from the application or navigating the Deep Link.
 
-<img alt="LiveBundle Architecture Overview" src={useBaseUrl('img/lbupload.png')} width="400"/>
+<img alt="LiveBundle CLI" src={useBaseUrl('img/lbupload.png')} width="400"/>
 
 ### GitHub Integration
 
 LiveBundle comes with a GitHub integration, to automatically package and publish changes associated to every opened PR. It will then post the resulting QR Code and Deep Link as a PR comment. Supercharge your reviews by trying the changes directly within the application !
+
+<img alt="LiveBundle GitHub PR" src={useBaseUrl('img/githubpr.png')} width="600"/>
 
 ### Live Session
 
