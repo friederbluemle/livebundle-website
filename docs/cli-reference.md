@@ -42,6 +42,19 @@ If this option is not supllied, the command will be run from the current directo
 The computer from which the command is run and the client mobile device have to be connected to the same network.
 :::
 
+`--host`
+
+Host on which to start the server.
+Defaults to the local network ip address of the machine.
+
+`--port`
+
+Port on which to start the server.
+Defaults to `8081`.
+
+Any other options to supply to the underlying server command can also be specified.
+For example if using default metro server, you can pass command line option such as `--reset-cache` or `--max-workers` or any other ones.
+
 ## init
 
 Generates a default starter LiveBundle configuration file _(livebundle.yml)_ in current directory.<br/>

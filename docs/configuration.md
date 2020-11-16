@@ -25,6 +25,9 @@ A LiveBundle configuration file is a [`yaml`][1] file, composed of four main sec
 # Bundler plugin declaration & configuration
 bundler:
 
+# Server plugin declaration & configuration
+server:
+
 # Generator(s) plugin(s) declaration & configuration
 generators:
 

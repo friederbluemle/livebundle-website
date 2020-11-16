@@ -102,13 +102,14 @@ Ideally you should add tests to cover all newly introduced code. This is not a s
 ├── lerna.json            // Lerna configuration
 ├── packages              // Node.js packages
 │   ├── livebundle                      // Command line CLI executable
-│   ├── livebundle-bunder-metro         // Metro Bundler plugin
+│   ├── livebundle-bundler-metro        // Metro Bundler plugin
 │   ├── livebundle-generator-deeplink   // Deep link generator plugin
 │   ├── livebundle-generator-qrcode     // QR Code generator plugin
 │   ├── livebundle-notifier-github      // GitHub notifier plugin
 │   ├── livebundle-notifier-terminal    // Terminal notifier plugin
 │   ├── livebundle-notifier-viewer      // Viewer notifier plugin
 │   ├── livebundle-sdk                  // SDK
+│   ├── livebundle-server-metro         // Metro Server plugin
 │   ├── livebundle-storage-azure        // Azure Storage plugin
 │   ├── livebundle-storage-fs           // File System Storage plugin
 │   └── livebundle-utils                // Misc utilities

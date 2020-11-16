@@ -12,7 +12,7 @@ While LiveBundle plugins are independent node packages, loaded dynamically, thus
 
 Implementation should be done in TypeScript if the plugin is to be hosted in LiveBundle CLI monorepo. This is not a requirement, and JavaScript can be used for non monorepo hosted plugins.
 
-As detailed in the [plugins overview](./plugins.md) documentation, LiveBundle plugins fall under four categories, respectively `Bundlers`, `Generators`, `Storage` and `Notifiers`.
+As detailed in the [plugins overview](./plugins.md) documentation, LiveBundle plugins fall under five categories, respectively `Bundlers`, `Servers`, `Generators`, `Storage` and `Notifiers`.
 
 When it comes to implementing a plugin, the only difference between these categories, is that each plugin category comes with its own interface to implement.
 
@@ -34,6 +34,7 @@ The easiest -for now- here would just be to copy/paste an existing plugin packag
 - To create a new `Storage` provider plugin, you can start from the [`livebundle-storage-fs`][1] plugin.
 - To create a new `Bundler` plugin, you can start from the [`livebundle-bundler-metro`][2] plugin.
 - To create a new `Notifier` plugin, you can start from the [`livebundle-notifier-terminal`][3] plugin.
+- To create a new `Server` plugin, you can start from the [`livebundle-server-metro`][4] plugin.
 
 ## Implement the plugin create method
 
@@ -48,6 +49,12 @@ Here are the interfaces of every plugin categories.
 ```typescript
 interface BundlerPlugin {
   bundle(): Promise<LocalBundle[]>;
+}
+```
+
+```typescript
+interface ServerPlugin {
+  launchServer(opts?: ServerOpts): Promise<void>;
 }
 ```
 
@@ -141,3 +148,4 @@ Internally, LiveBundle will preprocess and validate each plugin configuration as
 [1]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-storage-fs
 [2]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-bundler-metro
 [3]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-notifier-terminal
+[4]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-server-metro
