@@ -1,6 +1,6 @@
 module.exports = {
   title: 'LiveBundle',
-  tagline: 'Code. Share. Enjoy.',
+  tagline: 'For React Native',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
