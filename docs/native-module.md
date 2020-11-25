@@ -15,6 +15,22 @@ LiveBundle also have a peer dependency on [react-native-camera][1].
 It relies on this native module for its QR Code scanning functionality. If your React Native application is already using this native module, then you don't have anything to do. Otherwise, please make sure to add it to your application and configure the necessary permissions on Android and iOS *(LiveBundle only need permission to access the camera)*.
 :::
 
+## Configuring DeepLink support
+
+### Android
+
+You should add the following intent filter in your application `AndroidManifest.xml` file, inside the activity that should be launched when a LiveBundle Deep Link url is navigated to _(typicially your main activity)_.<br/>
+You should replace the `android:host` value with your application reverse domain _(you can find it on top of `AndroidManifest.xml` file as the `package` attribute of `manifest` tag)_
+
+```XML
+<intent-filter>
+    <action android:name="android.intent.action.VIEW"/>
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <data android:scheme="livebundle" android:host="io.livebundle.example" />
+</intent-filter>
+```
+
 ## Initializing LiveBundle native module
 
 LiveBundle native module should be initialized from both the native side, and the JS side.

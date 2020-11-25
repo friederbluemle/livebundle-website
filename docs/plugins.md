@@ -63,11 +63,19 @@ Scanning a generated QR Code with LiveBundle from the mobile application, will l
 ### Deep Link
 [livebundle-generator-deeplink][3]
 
-***Not configurable***
+***Default configuration***
+
+```yaml
+generator:
+  deeplink:
+    host: io.livebundle
+```
 
 The `deeplink` generator is in charge of generating a Deep Link url *(textual representation)* of a LiveBundle package.
 
 Navigating to a generated Deep Link, will load and install the corresponding LiveBundle package in the mobile application.
+
+By default, the host part of the deep link url is set to `io.livebundle`. You should instead set it to your application reverse domain name, so that in case multiple applications using LiveBundle are installed on a device, the deep link url will be opened in your application.
 
 ## Storage
 
@@ -127,14 +135,14 @@ Notifiers are in charge of surfacing the different representations *(QR Code, De
 
 The `terminal` notifier plugin will display the different representations in a terminal. It supports notification of QR Code representation *(will show the ascii generated QR Code)* as well as Deep Link *(will show the deep link itself)*.
 
-***Not configurable***
+
 
 ### Viewer
 [livebundle-notifier-viewer][8]
 
 The `viewer` notifier will only notify QR Code representations. It will open the QR Code image in the default application used for images viewing.
 
-***Not configurable***
+
 
 ### GitHub
 [livebundle-notifier-github][9]
@@ -167,10 +175,8 @@ Servers plugins are in charge of launching the React Native packager server used
 
 The `metro` server plugin will launch a metro server _(React Native default)_.
 
-***Not configurable***
 
-### Metro
-[livebundle-bundler-metro][1]
+
 
 [1]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-bundler-metro
 [2]: https://github.com/electrode-io/livebundle/tree/master/packages/livebundle-generator-qrcode
