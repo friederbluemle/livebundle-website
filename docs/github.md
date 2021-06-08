@@ -14,7 +14,7 @@ This integration will work in different GitHub/CI environments such as :
 
 ## Prerequisites
 
-- Complete functional LiveBundle setup *(completed the [Trying it out](./trying-it.md) section)*
+- Complete functional LiveBundle setup *(completed the [Trying it out](./cli.md) section)*
 - React Native application hosted in GitHub *(public or enteprise)*
 
 ## Adding the GitHub notifier plugin

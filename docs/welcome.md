@@ -62,7 +62,7 @@ Adding LiveBundle to a React Native application is detailed in the [Getting Star
 
 1. Installing the LiveBundle CLI, and creating its initial configuration _([CLI setup](./cli.md))_
 2. Setting up and initializing the native module _([Native Module setup](./native-module.md))_
-3. Finally, setting up the storage and testing LiveBundle end to end _([Azure Storage setup](./azure-storage))_
+3. Finally, setting up the storage and testing LiveBundle end to end _([Azure Storage setup](./storage))_
 
 ## Quick Start
 

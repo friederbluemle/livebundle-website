@@ -4,7 +4,7 @@ title: Configuration
 sidebar_label: Configuration
 ---
 
-The [default configuration file](link_to_repo_default_config_file) generated with `livebundle init` command, comes with a set of predefined plugins shipped with LiveBundle, along with their default configuration *(even though not explicitely needed)*.
+The [default configuration file](https://github.com/electrode-io/livebundle/blob/master/packages/livebundle/config/default.yaml) generated with `livebundle init` command, comes with a set of predefined plugins shipped with LiveBundle, along with their default configuration *(even though not explicitely needed)*.
 
 ## File Location
 

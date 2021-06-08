@@ -11,7 +11,7 @@ The source of this modularity comes from LiveBundle plugins system.
 LiveBundle will first generate and package JS bundle(s), using a `Bundler` plugin. It will then generate one or more representations *(QR Code, Deep Link ...)* for the package using one or more `Generator(s)` plugins. Then it will store the resulting LiveBundle packages, relying on a `Storage` plugin and will finally notify the user(s) by surfacing the packages representation(s), using one or more `Notifier(s)` plugins.
 Additionaly, for the `live` command, LiveBundle will rely on a `Server` plugin, used to launch a packager server.
 
-LiveBundle CLI ships with a predefined set of plugins. If you'd like to contribute a new plugin, please refer to our [plugin authoring documentation](link_to_plugin_authoring).
+LiveBundle CLI ships with a predefined set of plugins. If you'd like to contribute a new plugin, please refer to our [plugin authoring documentation](./plugin-authoring.md).
 
 This section contains a list of all the plugins that are currently shipped with LiveBundle along with a brief description.
 
