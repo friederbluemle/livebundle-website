@@ -19,7 +19,7 @@ This option can be of help in case you have different LiveBundle configuration f
 
 ## File Structure
 
-A LiveBundle configuration file is a [`yaml`][1] file, composed of four main sections:
+A LiveBundle configuration file is a [`yaml`][1] file, composed of five main sections:
 
 ```yaml
 # Bundler plugin declaration & configuration

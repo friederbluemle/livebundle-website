@@ -12,7 +12,7 @@ const features = [
     imageUrl: 'img/collaboration.svg',
     description: (
       <>
-        Quickly share any application changes, anytime, with anyone. LiveBundle generates a QR Code that can just be scanned from the application, or a deeplink that can be navigated to.
+        Swiftly and conveniently share application changes during development. LiveBundle generates a QR Code that can just be scanned from the application, or a deeplink that can be navigated to.
       </>
     ),
   },
@@ -23,7 +23,7 @@ const features = [
 
 
       <>
-LiveBundle comes with GitHub integration.<br/>If configured, LiveBundle will automatically post a QR Code and deep link on every pull request. Neat !
+LiveBundle comes with a GitHub integration.<br/>When configured, LiveBundle will automatically post a QR Code and deep link on every pull request. Neat !
       </>
     ),
   },
@@ -32,7 +32,7 @@ LiveBundle comes with GitHub integration.<br/>If configured, LiveBundle will aut
     imageUrl: 'img/open_source.svg',
     description: (
       <>
-       LiveBundle is fully open sourced.<br/>You just need to provide your own storage.
+       LiveBundle is fully open sourced.<br/>We provide the plumbing, you'll just need to provide the storage.
       </>
     ),
   },
@@ -58,7 +58,7 @@ function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">

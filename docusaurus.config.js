@@ -34,29 +34,16 @@ module.exports = {
           ],
         },
         {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            }
-          ],
-        },
-        {
           title: 'More',
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/electrode-io/livebundle',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} WalmartLabs. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Walmart. Built with Docusaurus.`,
     },
   },
   presets: [
@@ -68,13 +55,6 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
-          remarkPlugins: [require('@docusaurus/remark-plugin-npm2yarn')],
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
           remarkPlugins: [require('@docusaurus/remark-plugin-npm2yarn')],
         },
         theme: {
