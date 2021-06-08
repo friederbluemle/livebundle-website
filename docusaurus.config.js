@@ -1,11 +1,11 @@
 module.exports = {
   title: 'LiveBundle',
   tagline: 'For React Native',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://electrode-io.github.io',
+  baseUrl: '/livebundle-website/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'electrode-io', // Usually your GitHub org/user name.
+  projectName: 'livebundle-website', // Usually your repo name.
   themeConfig: {
     navbar: {
       logo: {
