@@ -54,7 +54,7 @@ To quickly locally try out LiveBundle end to end with your application, we recom
 ```java
 LiveBundle.initialize(
   getReactNativeHost(),
-  "http://127.0.0.1/");
+  "http://127.0.0.1:8080");
 ```
 
 **Azure Blob Storage**
