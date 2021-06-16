@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 In order to use LiveBundle you will need to provide your own storage for the bundles.
 As of its initial release, LiveBundle only supports [Azure Blob Storage][1] support.
 
-We havve no plan of implementing other cloud storage providers plugins *(unless driven by internal needs)*, but will welcome external contributions of such new plugins.
+We have no plan of implementing other cloud storage providers plugins *(unless driven by internal needs)*, but will welcome external contributions of such new plugins.
 
 Therefore, at this point, if you wish to use LiveBundle for your application, you will either need to provision and use an Azure Blob Storage account, or implement a new storage provider plugin to use another cloud storage provider.
 
