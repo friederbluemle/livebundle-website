@@ -2,7 +2,7 @@ module.exports = {
   title: 'LiveBundle',
   tagline: 'For React Native',
   url: 'https://electrode-io.github.io',
-  baseUrl: '/livebundle-website/',
+  baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'electrode-io', // Usually your GitHub org/user name.
   projectName: 'livebundle-website', // Usually your repo name.
