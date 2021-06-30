@@ -31,6 +31,35 @@ You should replace the `android:host` value with your application reverse domain
 </intent-filter>
 ```
 
+### iOS
+
+You should add the following lines in info.plist:
+
+```
+<key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>io.livebundle</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>livebundle</string>
+            </array>
+        </dict>
+    </array>
+```
+
+And add the following method in your appdelegate, This method is called whenever your app is launched using the deep-linking string you set in info.plist
+
+```
+- (BOOL)application:(UIApplication *)application
+   openURL:(NSURL *)url
+   options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+  return [RCTLinkingManager application:application openURL:url options:options];
+}
+```
+
 ## Initializing LiveBundle native module
 
 LiveBundle native module should be initialized from both the native side, and the JS side.
@@ -76,6 +105,24 @@ The `initialize` method also accepts a third optional parameter, respectively an
 :::note
 This initialization setup assumes an "out of the box" React Native application structure. If your application is more complex and diverges from this default structure *(for example if your application intialization code is not located in MainApplication.java)* you should invoke `initialize` where you see fit *(Ideally just after initializing React Native)*
 :::
+
+### iOS
+
+In appdelegate, import live bundle on native side
+
+```
+#import <react-native-livebundle/LiveBundle.h>
+```
+
+add the following line to the beginning of the `didFinishLaunchingWithOptions:(NSDictionary *)launchOptions` method:
+
+```
+NSString* storageUrlSuffix = @"";
+  NSString *storageUrl = @"http://192.168.1.7:8080";
+  [[LiveBundle alloc] initWithstorageUrl:storageUrl storageUrSulffix:storageUrlSuffix];
+```
+
+The bundles will be loaded from localhost when the project starts
 
 ### JavaScript
 
