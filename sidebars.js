@@ -1,5 +1,8 @@
-module.exports = {
-  someSidebar: {
+// @ts-check
+
+/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+const sidebars = {
+  docsSidebar: {
     "LiveBundle": [
       "welcome",
       "architecture",
@@ -23,3 +26,5 @@ module.exports = {
     ]
   },
 };
+
+module.exports = sidebars;
